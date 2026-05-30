@@ -57,7 +57,7 @@ project/
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/your-username/rag-assistant.git
+git clone https://github.com/Shrikant-kankuntla/Rag-Chatbot-Groq.git
 cd rag-assistant
 ```
 
@@ -185,12 +185,3 @@ pypdf
 
 ---
 
-## License
-
-This project is licensed under the MIT License.
-
----
-
-## Author
-
-Developed using Streamlit, LangChain, ChromaDB, Hugging Face Embeddings, and Groq to provide document-based question answering through Retrieval-Augmented Generation (RAG).
