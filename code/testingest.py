@@ -7,7 +7,6 @@ from langchain_chroma import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 
 
-# ---------------- PATH SETUP ----------------
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CHROMA_PATH = os.path.join(BASE_DIR, "db")
 
@@ -41,7 +40,6 @@ def main():
         chunk_overlap=50
     )
 
-    # ✅ Embedding model
     embeddings = HuggingFaceEmbeddings(
         model_name="sentence-transformers/all-mpnet-base-v2"
     )
@@ -52,10 +50,10 @@ def main():
     
     for source_name, file_path in FILES.items():
 
-        print(f"\n📄 Processing: {source_name}")
+        print(f"\n Processing: {source_name}")
 
         if not os.path.exists(file_path):
-            print(f"❌ File not found: {file_path}")
+            print(f" File not found: {file_path}")
             continue
 
         if file_path.lower().endswith(".pdf"):
@@ -98,13 +96,12 @@ def main():
 
         all_chunks.extend(chunks)
 
-    # ---------------- SAVE TO CHROMA ----------------
     if not all_chunks:
-        print("❌ No chunks created. Exiting.")
+        print(" No chunks created. Exiting.")
         return
 
-    print(f"\n📦 Total chunks: {len(all_chunks)}")
-    print("💾 Saving to Chroma...")
+    print(f"\nTotal chunks: {len(all_chunks)}")
+    print(" Saving to Chroma...")
 
     Chroma.from_documents(
         documents=all_chunks,
@@ -114,8 +111,5 @@ def main():
 
     print(" Database successfully created!")
 
-
-
-# ---------------- RUN ----------------
 if __name__ == "__main__":
     main()
