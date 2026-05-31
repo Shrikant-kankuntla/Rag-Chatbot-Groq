@@ -163,16 +163,31 @@ def load_documents():
 
 @st.cache_resource
 def load_db():
-    embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-mpnet-base-v2")
+    embeddings = HuggingFaceEmbeddings(
+        model_name="sentence-transformers/all-mpnet-base-v2"
+    )
+
     if os.path.exists(CHROMA_PATH):
-        shutil.rmtree(CHROMA_PATH)
+        return Chroma(
+            persist_directory=CHROMA_PATH,
+            embedding_function=embeddings
+        )
+
     docs = load_documents()
-    if not docs:
-        st.error("No documents found inside data folder.")
-        st.stop()
-    splitter = RecursiveCharacterTextSplitter(chunk_size=1200, chunk_overlap=250)
+
+    splitter = RecursiveCharacterTextSplitter(
+        chunk_size=1200,
+        chunk_overlap=250
+    )
+
     chunks = splitter.split_documents(docs)
-    db = Chroma.from_documents(documents=chunks, embedding=embeddings, persist_directory=CHROMA_PATH)
+
+    db = Chroma.from_documents(
+        documents=chunks,
+        embedding=embeddings,
+        persist_directory=CHROMA_PATH
+    )
+
     return db
 
 
