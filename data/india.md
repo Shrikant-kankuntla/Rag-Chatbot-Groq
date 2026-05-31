@@ -106,10 +106,7 @@ India became a republic on 26 January 1950 when the Constitution came into force
 
 ---
 
-## Economic Reforms (1991)
-
-India introduced economic liberalization in 1991 under Prime Minister P. V. Narasimha Rao and Finance Minister Dr. Manmohan Singh. The reforms promoted privatization, globalization, and foreign investment, leading to rapid economic growth.
-
+## Chhatrapati Shivaji Maharaj (19 February 1630 – 3 April 1680) was the founder of the Maratha Empire, an independent sovereign state in India that resisted Mughal and Deccan Sultanate domination.  Born at Shivneri Fort to Shahaji Bhonsale and Jijabai, he established his rule through strategic military campaigns and administrative reforms. 
 ---
 
 ## ISRO and Space Achievements
