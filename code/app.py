@@ -265,7 +265,7 @@ if query:
     st.markdown(f'<div class="user-bubble">{query}</div>', unsafe_allow_html=True)
 
     if is_greeting(query):
-        resp = "Hello. Ask questions from your documents."
+        resp = "Hello. Ask questions from your documents about the History of India/ Rome /Greek."
         st.session_state.chat_history.append(("assistant", resp))
         st.markdown(f'<div class="bot-bubble">{resp}</div>', unsafe_allow_html=True)
         st.stop()
