@@ -103,7 +103,7 @@ st.markdown("""
 
 
 def is_greeting(query):
-    greetings = ["hi", "hello", "hey", "good morning", "good evening"]
+    greetings = ["hi", "hii","hello", "hey", "good morning", "good evening"]
     return query.lower().strip() in greetings
 
 
